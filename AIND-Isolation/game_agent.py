@@ -268,11 +268,12 @@ class MinimaxPlayer(IsolationPlayer):
         
         if self.terminal_test(gameState):
 #            print("TERMINAL MIN <<<<<<<<<<<<")
-            return self.score(gameState,gameState.active_player)
-        
+#            return self.score(gameState,gameState.active_player)
+            return self.score(gameState,self)        
         # New conditional depth limit cutoff
         if depth <= 0:  # "==" could be used, but "<=" is safer
-            return self.score(gameState, gameState.active_player)
+#            return self.score(gameState, gameState.active_player)
+            return self.score(gameState, self)
 #            return 0
         
         v = float("inf")
@@ -292,11 +293,13 @@ class MinimaxPlayer(IsolationPlayer):
         
         if self.terminal_test(gameState):
 #            print("TERMINAL MAX <<<<<<<<<<<<")
-            return self.score(gameState,gameState.active_player)
+#            return self.score(gameState,gameState.active_player)
+            return self.score(gameState, self)
         
         # New conditional depth limit cutoff
         if depth <= 0:  # "==" could be used, but "<=" is safer 
-            return self.score(gameState, gameState.active_player)
+#            return self.score(gameState, gameState.active_player)
+            return self.score(gameState, self)
 #            return 0
         
         v = float("-inf")
@@ -462,11 +465,13 @@ class AlphaBetaPlayer(IsolationPlayer):
 
         if self.terminal_test(gameState):
 #            print("TERMINAL MIN <<<<<<<<<<<<")
-            return self.score(gameState,gameState.active_player)
+#            return self.score(gameState,gameState.active_player)
+            return self.score(gameState, self)
         
         # New conditional depth limit cutoff
         if depth <= 0:  # "==" could be used, but "<=" is safer
-            return self.score(gameState, gameState.active_player)
+#            return self.score(gameState, gameState.active_player)
+            return self.score(gameState, self)
 #            return 0
         
         v = float("inf")
@@ -489,11 +494,13 @@ class AlphaBetaPlayer(IsolationPlayer):
 
         if self.terminal_test(gameState):
 #            print("TERMINAL MAX <<<<<<<<<<<<")
-            return self.score(gameState,gameState.active_player)
+#            return self.score(gameState,gameState.active_player)
+            return self.score(gameState, self)
         
         # New conditional depth limit cutoff
         if depth <= 0:  # "==" could be used, but "<=" is safer 
-            return self.score(gameState, gameState.active_player)
+#            return self.score(gameState, gameState.active_player)
+            return self.score(gameState, self)
 #            return 0
         
         v = float("-inf")
